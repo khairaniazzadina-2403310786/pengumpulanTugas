@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST Bhinneka</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: "25px";
+        }
+        h2 {
+            text-align: left;
+        }
+    
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="file"], input[type="number"], textarea {
+            width: "25px";
+            padding: "20px";
+            margin-bottom: "10px";
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: "20px" "20px";
+            background-color: #89998a;
+            color: white;
+            border: none;
+            border-radius: "19px";
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #879788;
+        }
+        .navigation {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a><img src="logo.png" alt=""></a>
+        </div>
+    <div class="navigation">
+        <h2>Menu Navigasi</h2>
+<nav>
+            <ul>
+                <li><a href="beranda.html">Beranda</a></li>
+                <li><a href="tentangKami.html">Tentang Kami</a></li>
+                <li><a href="hubungiKami.html">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h2>Formulir Pengguna</h2>
+        <form>
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="address">Alamat:</label>
+            <textarea id="address" name="address"></textarea>
+            
+            <label>Jenis Kelamin:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Laki-laki</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Perempuan</label>
+
+            <label for="age">Usia:</label>
+            <input type="number" id="age" name="age">
+
+            <label for="hobbies">Hobi:</label>
+            <input type="checkbox" id="sports" name="hobbies" value="sports">
+            <label for="sports">Olahraga</label>
+            <input type="checkbox" id="music" name="hobbies" value="music">
+            <label for="music">Musik</label>
+            <input type="checkbox" id="reading" name="hobbies" value="reading">
+            <label for="reading">Membaca</label>
+
+            <label for="image">Pilih Gambar:</label>
+            <input type="file" id="image" name="image">
+
+            <label for="birthdate">Tanggal Lahir:</label>
+            <input type="text" id="birthdate" name="birthdate" placeholder="mm/dd/yyyy">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

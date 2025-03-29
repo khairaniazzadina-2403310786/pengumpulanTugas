@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST Bhinneka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            background-color: #007bff;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .container {
+            width: 50%;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="radio"], form input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #5c0762;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showPage(page) {
+            document.getElementById('beranda').classList.add('hidden');
+            document.getElementById('tentang').classList.add('hidden');
+            document.getElementById('kontak').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+
+            document.getElementById(page).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://satyaterrabhinneka.ac.id/assets/img/logo-universitas-satya-terra-bhinneka.png" alt="Logo ST Bhinneka" class="logo" onclick="showPage('dashboard')">
+        <h1>ST Bhinneka</h1>
+        <p>UNIVERSITAS SATYA TERRA BHINNEKA</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a onclick="showPage('beranda')">Beranda</a></li>
+            <li><a onclick="showPage('tentang')">Tentang Kami</a></li>
+            <li><a onclick="showPage('kontak')">Hubungi Kami</a></li>
+        </ul>
+    </nav>
+
+    <!-- Halaman Beranda -->
+    <section id="beranda" class="container">
+        <h2>Selamat Datang di ST Bhinneka</h2>
+        <p>Ini adalah halaman utama dari website ST Bhinneka.</p>
+
+        <h2>Formulir Pengguna</h2>
+        <form action="#" method="post">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="alamat"></textarea>
+
+            <label>Jenis Kelamin:</label>
+            <input type="radio" name="gender" value="Laki-laki"> Laki-laki
+            <input type="radio" name="gender" value="Perempuan"> Perempuan
+
+            <label for="usia">Usia:</label>
+            <input type="number" id="usia" name="usia" min="1">
+
+            <label>Hobi:</label>
+            <input type="checkbox" name="hobi" value="Olahraga"> Olahraga
+            <input type="checkbox" name="hobi" value="Musik"> Musik
+            <input type="checkbox" name="hobi" value="Membaca"> Membaca
+
+            <label for="foto">Pilih Gambar:</label>
+            <input type="file" id="foto" name="foto">
+
+            <label for="tanggal_lahir">Tanggal Lahir:</label>
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir">
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Halaman Tentang Kami -->
+    <section id="tentang" class="container hidden">
+        <h2>Visi & Misi</h2>
+        <h3>Visi</h3>
+        <p>Menjadi universitas unggulan yang menghasilkan lulusan berkualitas dan berdaya saing global.</p>
+        
+        <h3>Misi</h3>
+        <ul>
+            <li>Menyelenggarakan pendidikan berkualitas tinggi.</li>
+            <li>Mengembangkan penelitian yang inovatif.</li>
+            <li>Mengabdi kepada masyarakat melalui ilmu pengetahuan dan teknologi.</li>
+        </ul>
+    </section>
+
+    <!-- Halaman Hubungi Kami -->
+    <section id="kontak" class="container hidden">
+        <h2>Kontak Kami</h2>
+        <p>Jika Anda memiliki pertanyaan, silakan hubungi kami melalui:</p>
+        <ul>
+            <li>Email: office@satyaterrabhinneka.ac.id</li>
+            <li>Telepon: (061) 8457702</li>
+            <li>Alamat: Jl. Sunggal Gg. Bakul, Sunggal, Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20128</li>
+        </ul>
+    </section>
+
+    <!-- Halaman Dashboard -->
+    <section id="dashboard" class="container hidden">
+        <h2>Dashboard ST Bhinneka</h2>
+        <p>Di sini Anda dapat mengakses berbagai informasi akademik dan administrasi.</p>
+    </section>
+
+</body>
+</html>
