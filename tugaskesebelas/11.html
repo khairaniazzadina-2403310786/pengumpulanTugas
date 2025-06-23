@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pencarian Buku</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      input,
+      select {
+        margin: 5px 0;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Website Pencarian Buku</h1>
+
+    <input type="text" id="keyword" placeholder="Masukkan keyword" />
+    <br />
+
+    <input type="radio" name="searchOption" value="title" id="title" checked />
+    <label for="title">Title</label>
+
+    <input type="radio" name="searchOption" value="author" id="author" />
+    <label for="author">Author</label>
+
+    <input type="radio" name="searchOption" value="publisher" id="publisher" />
+    <label for="publisher">Publisher</label>
+
+    <input type="radio" name="searchOption" value="titleYear" id="titleYear" />
+    <label for="titleYear">Title and Year</label>
+
+    <div id="yearInput" style="display: none">
+      <input type="text" id="year" placeholder="Masukkan Tahun" />
+    </div>
+
+    <br />
+    <button onclick="searchBooks()">Cari</button>
+
+    <h2>Hasil Pencarian:</h2>
+    <ul id="result"></ul>
+
+    <script>
+      const books = [
+        {
+          title: "Dasar‑Dasar Teknik Informatika",
+          author: "Novega Pratama Adiputra",
+          publisher: "Deepublish",
+          year: "2020",
+          image:
+            "src:pengumpulanTugas/tugaskesebelas/Dasar-dasar-Teknik-Informatika.jpg",
+        },
+        {
+          title: "Pengantar Teknologi Informasi – Teknik Informatika",
+          author: "Buhori Muslim",
+          publisher: "Deepublish",
+          year: "2017",
+          image:
+            "pengumpulanTugas/tugaskesebelas/aset/Pengantar-Teknologi-Informasi.jpg",
+        },
+        {
+          title: "Pengantar Teknologi Informatika Dan Komunikasi Data",
+          author: "Bagaskoro, S.Kom., M.M.",
+          publisher: "Deepublish",
+          year: "2019",
+          image:
+            "pengumpulanTugas/tugaskesebelas/aset/Pengantar-Teknologi-Informatika-dan-Komunikas.jpg",
+        },
+        {
+          title: "Metode Penelitian Teknik Informatika",
+          author: "Ade Johar Maturidi",
+          publisher: "Deepublish",
+          year: "2025",
+          image:
+            " pengumpulanTugas/tugaskesebelas/aset/Metode-Penelitian-Teknik-Informatika.jpg",
+        },
+        {
+          title: "Komputer Cerdas Untuk Mahasiswa Teknik Informatika",
+          author: "Nur Nafi’iyah",
+          publisher: "Deepublish",
+          year: "2017",
+          image: "pengumpulanTugas/tugaskesebelas/aset/Komputer-Cerdas.jpg",
+        },
+        {
+          title: "Teknik Pengolahan Audio & Video",
+          author: "Johnie Rogers Swanda Pasaribu",
+          publisher: "Deepublish",
+          year: "2019",
+          image:
+            "pengumpulanTugas/tugaskesebelas/aset/Teknik-Pengolahan-Audio-Video.jpg",
+        },
+      ];
+
+      document
+        .querySelectorAll('input[name="searchOption"]')
+        .forEach((radio) => {
+          radio.addEventListener("change", () => {
+            if (document.getElementById("titleYear").checked) {
+              document.getElementById("yearInput").style.display = "block";
+            } else {
+              document.getElementById("yearInput").style.display = "none";
+            }
+          });
+        });
+
+      function searchBooks() {
+        const keyword = document.getElementById("keyword").value.toLowerCase();
+        const searchOption = document.querySelector(
+          'input[name="searchOption"]:checked'
+        ).value;
+        const year = document.getElementById("year").value;
+
+        let filteredBooks = [];
+
+        if (searchOption === "title") {
+          filteredBooks = books.filter((book) =>
+            book.title.toLowerCase().includes(keyword)
+          );
+        } else if (searchOption === "author") {
+          filteredBooks = books.filter((book) =>
+            book.author.toLowerCase().includes(keyword)
+          );
+        } else if (searchOption === "publisher") {
+          filteredBooks = books.filter((book) =>
+            book.publisher.toLowerCase().includes(keyword)
+          );
+        } else if (searchOption === "titleYear") {
+          filteredBooks = books.filter(
+            (book) =>
+              book.title.toLowerCase().includes(keyword) && book.year === year
+          );
+        }
+
+        displayResults(filteredBooks);
+      }
+
+      function displayResults(books) {
+        const resultList = document.getElementById("result");
+        resultList.innerHTML = "";
+
+        if (books.length === 0) {
+          resultList.innerHTML = "<li>Tidak ada hasil.</li>";
+          return;
+        }
+
+        books.forEach((book) => {
+          const li = document.createElement("li");
+          li.textContent = `${book.title} - ${book.author} - ${book.publisher} - ${book.year}`;
+          resultList.appendChild(li);
+        });
+      }
+    </script>
+  </body>
+</html>
