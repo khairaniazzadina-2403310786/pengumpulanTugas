@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popular Books</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        margin-bottom: 15px;
+      }
+      .books-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .book-card {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .book-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+      .book-card h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      .book-card p {
+        margin: 3px 0;
+      }
+      .book-card .publisher {
+        font-size: 12px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Popular</h2>
+
+    <div class="books-section">
+      <div class="book-card">
+        <img
+          src="C:\Users\LENOVO\Documents\pengumpulanTugasweb\pertemuan12\public\Dasar-dasar-Teknik-Informatika.jpg"
+          alt="Dasar-dasat teknik Informatika"
+        />
+        <h3>Dasar-dasat teknik Informatika</h3>
+        <p>Novega Pratama Adiputra</p>
+        <p class="publisher">Deepublish</p>
+      </div>
+      <div class="book-card">
+        <img
+          src="C:\Users\LENOVO\Documents\pengumpulanTugasweb\pertemuan12\public\Buku-Ajar-Aplikasi-Komputer.jpg"
+          alt="Buku-Ajar-Aplikasi-Komputer"
+        />
+        <h3>Buku Ajar Aplikasi Komputer</h3>
+        <p>Buhori Muslim</p>
+        <p class="publisher">Deepublish</p>
+      </div>
+      <div class="book-card">
+        <img
+          src="pertemuan12\public\metode-penelitian-teknik-informatika.jpg"
+          alt="metode-penelitian-teknik-informatika"
+        />
+        <h3>metode-penelitian-teknik-informatika</h3>
+        <p>Ade Johar Maturidi</p>
+        <p class="publisher">Deepublish</p>
+      </div>
+    </div>
+  </body>
+</html>

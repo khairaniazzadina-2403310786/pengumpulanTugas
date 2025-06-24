@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Konversi Bilangan Desimal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      input,
+      button {
+        padding: 10px;
+        font-size: 16px;
+      }
+      #alertMessage {
+        color: red;
+        margin-top: 10px;
+      }
+      #resultMessage {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Konversi Bilangan Desimal</h1>
+
+    <input
+      type="text"
+      id="decimalInput"
+      placeholder="Masukkan bilangan desimal"
+    />
+    <button id="convertButton">Konversi</button>
+
+    <div id="alertMessage" style="display: none">
+      Input tidak valid. Masukkan bilangan bulat positif.
+    </div>
+
+    <div id="resultMessage" style="display: none">
+      <p id="binaryResult"></p>
+      <p id="octalResult"></p>
+      <p id="hexResult"></p>
+    </div>
+
+    <script>
+      // Tambahkan event listener ke tombol setelah DOM dimuat
+      document
+        .getElementById("convertButton")
+        .addEventListener("click", function () {
+          const input = document.getElementById("decimalInput").value.trim();
+          const decimalNumber = parseInt(input);
+          const alertMessage = document.getElementById("alertMessage");
+          const resultMessage = document.getElementById("resultMessage");
+          const binaryResult = document.getElementById("binaryResult");
+          const octalResult = document.getElementById("octalResult");
+          const hexResult = document.getElementById("hexResult");
+
+          // Sembunyikan semua pesan terlebih dahulu
+          alertMessage.style.display = "none";
+          resultMessage.style.display = "none";
+
+          // Validasi input
+          if (isNaN(decimalNumber) || decimalNumber < 0) {
+            alertMessage.style.display = "block";
+            return;
+          }
+
+          // Konversi
+          binaryResult.innerText = "Biner: " + decimalNumber.toString(2);
+          octalResult.innerText = "Oktal: " + decimalNumber.toString(8);
+          hexResult.innerText =
+            "Heksadesimal: " + decimalNumber.toString(16).toUpperCase();
+
+          // Tampilkan hasil
+          resultMessage.style.display = "block";
+        });
+    </script>
+  </body>
+</html>
