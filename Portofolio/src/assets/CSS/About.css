@@ -1,0 +1,179 @@
+.Intro1 {
+  background-color: #e7ebfc;
+}
+section .headline-intro-1 {
+  color: #19345e;
+}
+section figure .gambar-1 {
+  width: 70px;
+}
+section button {
+  background-color: #19345e;
+}
+section div .pict-solut1 {
+  width: 30px;
+}
+
+.container-solution {
+  background-color: #e7ebfc;
+}
+.container-solution-1 {
+  background-color: white;
+}
+#carouselExampleIndicators .carousel-item .pic-sol {
+  width: 40px;
+}
+#carouselExampleIndicators2 .carousel-item .pic-sol {
+  width: 40px;
+}
+#carouselExampleIndicators3 .carousel-item .pic-sol {
+  width: 40px;
+}
+.container-benefit {
+  background-color: white;
+}
+.back-foto-testimoni {
+  background-color: #e7ebfc;
+}
+.text-testi {
+  color: #19345e;
+}
+#carouselExampleIndicators3 .carousel-item .pic-team {
+  width: 250px;
+  padding: 10px;
+  background-color: #e7ebfc;
+}
+footer {
+  background-color: #19345e;
+}
+.icon-sosmed-row1 img {
+  width: 70px;
+}
+.icon-sosmed-row2 img {
+  width: 70px;
+}
+section .container-carousel img {
+  width: 40px;
+}
+/* Ukuran font untuk layar besar (lg) */
+@media (min-width: 992px) {
+  section div .headline-intro-1 {
+    font-size: 64px;
+  }
+  section div .testi-text {
+    font-size: 24px;
+  }
+  section div figure .gambar-1 {
+    width: 90px;
+    height: 90px;
+  }
+  section div figure .name-testi {
+    font-size: 18px;
+  }
+  .btn-sol-desktop {
+    background-color: white;
+  }
+  div .container-sol button {
+    display: flex;
+    gap: 4px;
+    align-content: center;
+    align-items: center;
+  }
+  div .container-sol img {
+    width: 20px;
+  }
+
+  footer div button {
+    background-color: #19345e;
+    color: white;
+    text-align: start;
+    padding: 0;
+  }
+  section .headline-intro-1 {
+    font-size: 40px;
+  }
+  .solution-tablet-container div .pic-sol {
+    width: 40px;
+  }
+  .solution-tablet-container {
+    background-color: #e7ebfc;
+    margin-bottom: 20px;
+  }
+  .container-sol {
+    background-color: white;
+  }
+}
+.cont-img-benefit-1 {
+  img {
+    width: 40px;
+  }
+}
+.text-benefit {
+  font-size: 16px;
+}
+.meet-our-team div .pic-prof {
+  width: 150px;
+  background-color: #e7ebfc;
+}
+
+.carousel .container-solution button {
+  background-color: white;
+}
+/* Ukuran font untuk breakpoint medium (md) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  footer div button {
+    background-color: #19345e;
+    color: white;
+    text-align: start;
+    padding: 0;
+  }
+  section .headline-intro-1 {
+    font-size: 40px;
+  }
+  .solution-tablet-container div .pic-sol {
+    width: 40px;
+  }
+  .solution-cont {
+    background-color: #e7ebfc;
+  }
+  .container-sol {
+    background-color: white;
+  }
+  .btn-sol-desktop {
+    background-color: white;
+  }
+  div .container-sol button {
+    display: flex;
+    gap: 4px;
+    align-content: center;
+    align-items: center;
+  }
+  div .container-sol img {
+    width: 20px;
+  }
+  .closing-head {
+    background-color: #e7ebfc;
+    h3 {
+      color: #19345e;
+      padding: 40px;
+      font-size: 40px;
+    }
+    p {
+      max-width: 600px;
+      margin: auto;
+    }
+  }
+  .icon-sosmed-row1 img {
+    width: 70px;
+  }
+  .icon-sosmed-row2 img {
+    width: 70px;
+  }
+}
+
+/* Ukuran font untuk layar kecil (sm) */
+@media (max-width: 576px) {
+  section .carousel-item {
+    background-color: white;
+  }
+}
